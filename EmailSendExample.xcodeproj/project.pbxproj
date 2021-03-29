@@ -11,6 +11,7 @@
 		819BBB9526122FEA00C60317 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BBB9426122FEA00C60317 /* ContentView.swift */; };
 		819BBB9726122FEB00C60317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819BBB9626122FEB00C60317 /* Assets.xcassets */; };
 		819BBB9A26122FEB00C60317 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 819BBB9926122FEB00C60317 /* Preview Assets.xcassets */; };
+		819BBBA42612302500C60317 /* EmailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BBBA32612302500C60317 /* EmailHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		819BBB9626122FEB00C60317 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		819BBB9926122FEB00C60317 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		819BBB9B26122FEB00C60317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		819BBBA32612302500C60317 /* EmailHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				819BBB9226122FEA00C60317 /* EmailSendExampleApp.swift */,
 				819BBB9426122FEA00C60317 /* ContentView.swift */,
+				819BBBA32612302500C60317 /* EmailHelper.swift */,
 				819BBB9626122FEB00C60317 /* Assets.xcassets */,
 				819BBB9B26122FEB00C60317 /* Info.plist */,
 				819BBB9826122FEB00C60317 /* Preview Content */,
@@ -140,6 +143,7 @@
 			files = (
 				819BBB9526122FEA00C60317 /* ContentView.swift in Sources */,
 				819BBB9326122FEA00C60317 /* EmailSendExampleApp.swift in Sources */,
+				819BBBA42612302500C60317 /* EmailHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

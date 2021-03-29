@@ -8,9 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var recipient = ""
+    @State private var subject = ""
+    @State private var messageBody = ""
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        Form {
+            
+            Section(header: Text("Sending to whom?")) {
+                TextField("e.g.: someone@xyz.com", text: $recipient)
+            }
+
+            Section(header: Text("What is the subject?")) {
+                TextField("e.g.: Read me right now... urgent!", text: $subject)
+            }
+
+            Section(header: Text("What do you want to say?")) {
+                TextEditor(text: $messageBody)
+            }
+            
+            Button("Send email") {
+                // Invoke the static property on the EmailHelper class and send an email using the phone's configured email client
+                // TODO: Implement proper error handling if an email client isn't configured
+                EmailHelper.shared.sendEmail(subject: subject, body: messageBody, to: recipient)
+            }
+            
+        }
+        .navigationTitle("Email Send Test")
+        
     }
 }
 
