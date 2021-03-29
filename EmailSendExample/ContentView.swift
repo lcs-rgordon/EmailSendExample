@@ -9,9 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
+    // What to say in the email
     @State private var recipient = ""
     @State private var subject = ""
     @State private var messageBody = ""
+    
+    // Whether to show the alert
+    @State private var showingAlert = false
     
     var body: some View {
         
@@ -30,13 +34,20 @@ struct ContentView: View {
             }
             
             Button("Send email") {
-                // Invoke the static property on the EmailHelper class and send an email using the phone's configured email client
-                // TODO: Implement proper error handling if an email client isn't configured
-                EmailHelper.shared.sendEmail(subject: subject, body: messageBody, to: recipient)
+                do {
+                    // Invoke the static property on the EmailHelper class and send an email using the phone's configured email client
+                    try EmailHelper.shared.sendEmail(subject: subject, body: messageBody, to: recipient)
+                } catch {
+                    showingAlert = true
+                }
             }
+            
             
         }
         .navigationTitle("Email Send Test")
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Cannot send email"), message: Text("No email client is configured. Please add an email account to your device."), dismissButton: .default(Text("OK")))
+        }
         
     }
 }
