@@ -17,6 +17,9 @@ struct ContentView: View {
     // Whether to show the alert
     @State private var showingAlert = false
     
+    // URL that will open if the user wants to learn how to add an email account
+    @Environment(\.openURL) var openURL
+    
     var body: some View {
         
         Form {
@@ -46,9 +49,15 @@ struct ContentView: View {
         }
         .navigationTitle("Email Send Test")
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Cannot send email"),
-                  message: Text("No email client is configured. Please add an email account to your device."),
-                  dismissButton: .default(Text("OK")))
+
+            Alert(
+                 title: Text("Cannot send email"),
+                 message: Text("No email client is configured. Please add an email account to your device."),
+                 primaryButton: .default(Text("Learn How")) {
+                    openURL(URL(string: "https://support.apple.com/en-us/HT201320")!)
+                 },
+                secondaryButton: .default(Text("Not Now"))
+             )
         }
         
     }
