@@ -46,7 +46,9 @@ struct ContentView: View {
         }
         .navigationTitle("Email Send Test")
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Cannot send email"), message: Text("No email client is configured. Please add an email account to your device."), dismissButton: .default(Text("OK")))
+            Alert(title: Text("Cannot send email"),
+                  message: Text("No email client is configured. Please add an email account to your device."),
+                  dismissButton: .default(Text("OK")))
         }
         
     }
